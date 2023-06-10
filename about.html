@@ -7,6 +7,11 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+        <!-- Include the Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      
+      
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -28,6 +33,7 @@
             <span>ABOUT</span>
             <h2>LEARN MORE ABOUT ME</h2>
 
+            <!-- about me -->
             <div class="about-me section-m1">
                 <div class="myimage">
                     <img src="images/prof3.jpg" alt="">
@@ -57,6 +63,7 @@
                 </div>
             </div>
 
+            <!-- counts -->
             <div class="counts section-m1">
                 <div class="box1">
                     <i class="fas fa-smile"></i>
@@ -88,7 +95,7 @@
                 </div>
             </div>
 
-
+            <!-- skills -->
             <span>SKILLS</span>
             <div class="skills section-m1">
                 <div class="row1">
@@ -155,12 +162,132 @@
                 </div>   
             </div>
 
+            <!-- interests -->
+            <span>INTERESTS</span>
+            <div class="interests section-m1">
+                <div class="interest-row">
+                    <div class="interest1">
+                        <i class="fa fa-car green"></i>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-cloud green"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-car green"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-cloud green"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                </div>
+                <div class="interest-row">
+                    <div class="interest1">
+                        <i class="fa fa-music yellow"></i>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-dragon yellow"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-music yellow"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-dragon yellow"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                </div>
+                <div class="interest-row">
+                    <div class="interest1">
+                        <i class="fa fa-futbol blue"></i>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-car blue"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-futbol blue"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                    <div class="interest1">
+                        <i class="fa fa-car blue"></i>
+                        <p>Lorem, ipsum</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- testimonials -->
+            <span>TESTIMONIALS</span>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis ipsum maxime asperiores. Facere alias exercitationem provident, soluta dignissimos doloremque fuga aliquid molestias accusamus quos!"</em></p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis ipsum maxime asperiores. Facere alias exercitationem provident, soluta dignissimos doloremque fuga aliquid molestias accusamus quos!"</em></p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis ipsum maxime asperiores. Facere alias exercitationem provident, soluta dignissimos doloremque fuga aliquid molestias accusamus quos!"</em></p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis ipsum maxime asperiores. Facere alias exercitationem provident, soluta dignissimos doloremque fuga aliquid molestias accusamus quos!"</em></p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi perferendis ipsum maxime asperiores. Facere alias exercitationem provident, soluta dignissimos doloremque fuga aliquid molestias accusamus quos!"</em></p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+              
+
         </div>
     </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Include the Swiper library -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize Swiper
+            var swiper = new Swiper('.swiper-container', {
+                autoplay: {
+                delay: 2000, // Set the desired delay in milliseconds
+                },
+                slidesPerView: 3,
+                spaceBetween: 10,
+                centeredSlides: true,
+                loop: true,
+                loopAdditionalSlides: 10,
+                loopedSlides: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -173,6 +300,10 @@
     <!-- js to animate progress bars -->
     <script>
         $(document).ready(function() {
+            var animationComplete = false;
+
+            $(document).scroll(function() {
+            if (!animationComplete) {
           animateProgressBar('#progress-bar-1', 100, 2000); // Animate first progress bar to 25%
           animateProgressBar('#progress-bar-2', 90, 2000); // Animate second progress bar to 90%
           animateProgressBar('#progress-bar-3', 75, 2000); // Animate third progress bar to 75%
@@ -180,9 +311,13 @@
           animateProgressBar('#progress-bar-5', 90, 2000); // Animate second progress bar to 90%
           animateProgressBar('#progress-bar-6', 55, 2000); // Animate third progress bar to 55%
         
+            animationComplete = true;
+            }
+            });
+        
           function animateProgressBar(barSelector, targetWidth, duration) {
             var progressBar = $(barSelector);
-            progressBar.animate({ width: targetWidth + '%' }, duration);
+            progressBar.stop().animate({ width: targetWidth + '%' }, duration);
           }
         });
      </script>
