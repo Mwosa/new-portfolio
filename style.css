@@ -148,7 +148,7 @@ h5 {
 }
 
 .margineffect {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(95, 7, 7, 0.7);
     padding: 20px;
 }
 #about span {
@@ -319,31 +319,56 @@ h5 {
     display: flex;
     overflow: hidden;
     position: relative;
+    padding: 40px 0; 
     
   }
- 
   .swiper-slide {
     width: 100%;
     height: 100%;
     flex: 0 0 auto;
   }
-  
+  .testimonial-details {
+    color: #fff;
+    padding: 10px 0 10px 25px;
+  }
+  .testimonial-details h6 {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .testimonial-details p {
+    color: #afacac;
+  }
   .card {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 5px;
+    text-align: center;
+    margin-right: 25px;
+    margin-left: 25px;
   }
   .card p {
     color: #fff;
+  }
+  .pic img{
+    height: 13vh;
+    border-radius: 50%;
+    border: 6px solid rgba(0, 0, 0, 0.7);
+    align-items: center;
+    width: 80px;
+    border-radius: 50%;
+    margin: -30px 0 0 40px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 999;
   }
   .swiper-pagination {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
   }
   .swiper-pagination-bullet {
     width: 10px;
@@ -352,8 +377,7 @@ h5 {
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    margin: 0 5px;
-    
+    margin: 0 5px; 
   }
   .swiper-pagination-bullet-active {
     opacity: 1;
