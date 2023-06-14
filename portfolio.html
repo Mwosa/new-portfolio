@@ -36,32 +36,53 @@
                 <h2>MY WORKS</h2>
 
             <div id="portfolio-buttons">
-                <button class="but" onclick="filterObjects('all')">ALL</button>
+                <button class="but butActive" onclick="filterObjects('all')">ALL</button>
                 <button class="but" onclick="filterObjects('app')">APP</button>
                 <button class="but" onclick="filterObjects('cardd')">CARD</button>
                 <button class="but" onclick="filterObjects('web')">WEB</button>
             </div>
 
             <div class="objects">
-                <div class="box app"><img src="images/prof2.jpg" alt=""></div>
-                <div class="box app"><img src="images/bg5.jpg" alt=""></div>
-                <div class="box app"><img src="images/bg6.jpg" alt=""></div>
+                <div class="box app"><img src="images/prof2.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box app"><img src="images/bg5.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box app"><img src="images/bg6.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
             
-                <div class="box cardd"><img src="images/bg1.jpg" alt=""></div>
-                <div class="box cardd"><img src="images/bg2.jpg" alt=""></div>
-                <div class="box cardd"><img src="images/suit1.jpg" alt=""></div>
+                <div class="box cardd"><img src="images/bg1.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box cardd"><img src="images/bg2.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box cardd"><img src="images/suit1.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
 
-                <div class="box web"><img src="images/abt1.jpg" alt=""></div>
-                <div class="box web"><img src="images/abt2.jpg" alt=""></div>
-                <div class="box web"><img src="images/savemoney.jpg" alt=""></div>
+                <div class="box web"><img src="images/abt1.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box web"><img src="images/abt2.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
+                <div class="box web"><img src="images/savemoney.jpg" alt=""><a href="#" onclick="toggleSection('port-details')"><i class="fa-solid fa-link"></i></a></div>
             </div>
-
-            
+  
                 
-
             </div>
         </section>
 
+        <!-- portfolio details section -->
+        <section id="port-details" class="section-p1">
+            <span class="icon-close" onclick="closePortDetails()"><ion-icon name="close"></ion-icon></span>
+            <h4>This is an example of portfolio detail</h4>
+            <div class="port-info">
+                <swiper-container class="mySwiper" pagination="true" autoplay-delay="4000" autoplay-disable-on-interaction="false">
+                    <swiper-slide><img src="images/abt1.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="images/abt2.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="images/bg1.jpg" alt=""></swiper-slide>
+                </swiper-container>
+                <div class="details">
+                    <h5>Project Information</h5>
+                    <h6><strong>Category: </strong>Web Design</h6>
+                    <h6><strong>Client: </strong>ASU Company</h6>
+                    <h6><strong>Project Date: </strong>01 March, 2022</h6>
+                    <h6><strong>Project URL: </strong><span>www.example.com</span></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sunt reiciendis cupiditate! Architecto vero inventore officia corrupti deleniti, ea nisi perferendis aliquam optio magni tenetur unde quidem dolorum accusantium tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sunt reiciendis cupiditate! Architecto vero inventore officia corrupti deleniti, ea </p>
+                </div>
+            </div>
+
+        </section>
+
+<!-- to filter the boxes -->
   <script>      
 filterObjects("all");
 function filterObjects(c){
@@ -73,7 +94,6 @@ function filterObjects(c){
         if (x[i].className.indexOf(c) > -1) addClass (x[i], "show")
     }
 }
-
 function addClass (element, name){
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
@@ -84,7 +104,6 @@ function addClass (element, name){
         }
     }
 }
-
 function removeClass (element, name){
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
@@ -98,9 +117,94 @@ function removeClass (element, name){
 }
 </script>
 
+<!-- to open and close portfolio details -->
+<script>
+    var initialContent ='';
+
+function toggleSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    var otherElements = document.getElementsByClassName('section-p1');
+
+    //save the initial content of the section
+    initialContent = section.innerHTML;
+
+    //hide all other elements
+    for (var i = 0; i < otherElements.length; i++) {
+        otherElements[i].style.display = 'none';
+    }
+    //toggle the display of the clicked section
+    if (section.style.display === 'none'){
+        section.style.display = 'block';
+    } else {
+        section.style.display = 'none';
+    }
+}
+  
+function closePortDetails() {
+    var section = document.getElementById('port-details');
+    var otherElements = document.getElementsByClassName("section-p1");
+
+    //hide the section
+    section.style.display = 'none';
+
+    //show other elements
+    for (var i = 0; i < otherElements.length; i++) {
+        otherElements[i].style.display = 'block';
+  }
+    //restore the initial content of the section
+    section.innerHTML = initialContent;
+}
+</script>
+  
+
+<!-- button class active -->
+<script>
+    const btnActive = document.querySelectorAll('.but');
+
+    btnActive.forEach(but => {
+        but.addEventListener('click', function(){
+            btnActive.forEach(btn => btn.classList.remove('butActive'));
+            this.classList.add('butActive');
+        });
+    });
+</script>
+
+<!-- styling the pagination -->
+<script>
+    const swiperEl = document.querySelector('swiper-container');
+
+    const params = {
+        injectStyles: [`
+       
+        .swiper-pagination-bullet {
+            width: 13px;
+            height: 13px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 10px;
+            color: rgba(70, 68, 68, 0.9);
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #22eb86;
+        }
+        `]
+    }
+    
+    Object.assign(swiperEl, params);
+
+    swiperEl.initialize();
+</script>
+
+
         
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
