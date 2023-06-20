@@ -20,7 +20,24 @@ body {
 }
 .section-p1 {
     padding: 20px 80px;
+    animation-name: sectionUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+
 }
+
+@keyframes sectionUp {
+    from {
+      opacity: 0;
+      scale: 0.95;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+}
+
 .section-m1 {
     margin-bottom: 50px;
 }
@@ -146,6 +163,11 @@ h5 {
     top: 0;
     left: 0;
     z-index: 999;
+}
+.mainNavBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 #main-nav #navbar {
     margin: 0px;
@@ -683,13 +705,16 @@ h2 {
 }
 .box a {
     color: #fff;
+    text-decoration: none;
 }
 .box i {
     transform: translateY(-160px);
+    display: block;
     opacity: 0;
     font-size: 28px;
     cursor: pointer;
     transition: 0.7s ease;
+    /* display: flex; */
 }
 .box i:hover {
     color: #22eb86;
@@ -786,4 +811,3 @@ swiper-container {
     cursor: pointer;
     z-index: 1;
   }
-
